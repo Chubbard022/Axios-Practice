@@ -4,7 +4,7 @@ const knexConfig = require("../knexfile")
 const db = knex(knexConfig.development);
 
 router.get("/",(req,res)=>{
-  db("action")
+  db("source")
     .then(response=>{
       res.status(200).json(response)
     })
@@ -16,8 +16,8 @@ router.get("/",(req,res)=>{
 router.get("/:id",(req,res)=>{
   const actionId = req.params.id
 
-  db("action")
-    .where({id: actionId})
+  db("source")
+    .where({id: sourceID})
     .first()
     .then(response=>{
       res.status(200).json(response)
@@ -28,13 +28,13 @@ router.get("/:id",(req,res)=>{
 })
 
 router.post("/",(req,res)=>{
-  const newAction = req.body;
+  const newSource = req.body;
 
-  db("action")
-  .insert(newAction)
+  db("source")
+  .insert(newSource)
   .then(ids=>{
     const id = ids[0]
-    db("action")
+    db("source")
       .where({id})
       .first()
       .then(response=>{
