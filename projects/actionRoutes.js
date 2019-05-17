@@ -10,7 +10,7 @@ router.get("/",(req,res)=>{
             res.status(200).json(response)
         })
         .catch(err=>{
-            res.status(500).json({errorMessge:"could not GET data"})
+            res.status(500).json({errorMessage:"could not GET data"})
         })
 })
 router.post("/",(req,res)=>{
