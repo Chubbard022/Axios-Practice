@@ -8,6 +8,11 @@ module.exports = {
       filename: "./dev.sqlite3"
     },
     useNullAsDefault:true,
+    pool:{
+      afterCreate:(connection,done)=>{
+        connection.run("PRAGMA foreign_keys = ON",done)
+      }
+    },
     migrations:{
       directory:"./data/migrations"
     },
