@@ -1,16 +1,28 @@
 const express = require("express")
 const helmet = require("helmet")
-const sourceRouter = require("../projects/actionRoutes")
+const cors = require("cors")
+const configureRoutes = require("../config/routes")
+
+const sourceRouter = require("../projects/sourceRouter")
+const categoryRouter = require("../projects/categoryRouter")
+const RecipeRouter = require("../projects/recipeRouter")
+const ingredientRouter = require("../projects/ingredientRouter")
+
 
 const server = express()
 
 server.use(express.json())
 server.use(helmet())
+server.use(cors())
 
 server.use("/api/source",sourceRouter)
+server.use("/api/category",categoryRouter)
+server.use("/api/recipe",RecipeRouter)
+server.use("/api/ingredient",ingredientRouter)
 
 server.get("/",(req,res)=>{
     res.status(200).json("server working")
 })
 
+configureRoutes(server);
 module.exports = server
