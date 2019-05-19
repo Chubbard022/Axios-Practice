@@ -11,8 +11,20 @@ router.get("/",(req,res)=>{
       .catch(err=>{
         res.status(500).json(err)
       })
-  })
+})
+router.get("/:id",(req,res)=>{
+const ingredientID = req.params.id
 
+db("ingredient")
+    .where({id: ingredientID})
+    .first()
+    .then(response=>{
+    res.status(200).json(response)
+    })
+    .catch(err=>{
+    res.status(500).json(err)
+    })
+})
 router.post("/",(req,res)=>{
 const newIngredient = req.body;
 

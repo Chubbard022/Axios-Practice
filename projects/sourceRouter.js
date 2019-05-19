@@ -12,9 +12,8 @@ router.get("/",(req,res)=>{
       res.status(500).json(err)
     })
 })
-
 router.get("/:id",(req,res)=>{
-  const actionId = req.params.id
+  const sourceID = req.params.id
 
   db("source")
     .where({id: sourceID})
@@ -26,7 +25,6 @@ router.get("/:id",(req,res)=>{
       res.status(500).json(err)
     })
 })
-
 router.post("/",(req,res)=>{
   const newSource = req.body;
 
@@ -60,7 +58,7 @@ router.put('/:id', (req, res) => {
       .catch(err => {
       res.status(500).json(err);
       });
-  });
+});
 router.delete("/:id",(req,res)=>{
   db("source")
   .where({id: req.params.id})
