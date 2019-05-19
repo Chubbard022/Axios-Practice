@@ -2,6 +2,7 @@ const express = require("express")
 const helmet = require("helmet")
 const cors = require("cors")
 const configureRoutes = require("../config/routes")
+const { authenticate } = require("../auth/authenticate");
 
 const sourceRouter = require("../projects/sourceRouter")
 const categoryRouter = require("../projects/categoryRouter")
@@ -16,7 +17,7 @@ server.use(helmet())
 server.use(cors())
 
 server.use("/api/source",sourceRouter)
-server.use("/api/category",categoryRouter)
+server.use("/api/category",authenticate,categoryRouter)
 server.use("/api/recipe",RecipeRouter)
 server.use("/api/ingredient",ingredientRouter)
 
