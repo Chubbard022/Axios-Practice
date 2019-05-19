@@ -12,5 +12,36 @@ router.get("/",(req,res)=>{
         res.status(500).json(err)
       })
   })
-
+  router.post("/",(req,res)=>{
+    const newCategory = req.body;
+  
+    db("category")
+    .insert(newCategory)
+    .then(ids=>{
+      const id = ids[0]
+      db("category")
+        .where({id})
+        .first()
+        .then(response=>{
+          res.status(201).json(response)
+        })
+    }).catch(err=>{
+      res.status(500).json(err)
+    })
+  })
+  router.delete("/:id",(req,res)=>{
+    db("category")
+    .where({id: req.params.id})
+    .del()
+    .then(count =>{
+        if(count > 0) {
+            res.status(200).json({message: `${count} ${count > 1 ? 'categories' : 'category'} deleted`})
+        }else {
+            res.status(404).json({ message: 'category does not exist' });
+          }
+    })
+    .catch(err => {
+        res.status(500).json(err);
+      });
+})
 module.exports = router;

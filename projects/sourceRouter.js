@@ -45,4 +45,19 @@ router.post("/",(req,res)=>{
   })
 })
 
+router.delete("/:id",(req,res)=>{
+  db("source")
+  .where({id: req.params.id})
+  .del()
+  .then(count =>{
+      if(count > 0) {
+          res.status(200).json({message: `${count} ${count > 1 ? 'sources' : 'source'} deleted`})
+      }else {
+          res.status(404).json({ message: 'source does not exist' });
+          }
+  })
+  .catch(err => {
+    res.status(500).json(err);
+  });
+})
 module.exports = router;

@@ -11,6 +11,8 @@
   "author": "Chubbard022 <chubbard022@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",
     "dotenv": "^8.0.0",
