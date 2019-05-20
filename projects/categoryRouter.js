@@ -25,6 +25,11 @@ db("category")
     res.status(500).json(err)
     })
 })
+//------------------------------------------------
+router.get("/recipes",(req,res)=>{
+    db("")
+})
+//------------------------------------------------
 router.post("/",(req,res)=>{
 const newCategory = req.body;
 
