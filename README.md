@@ -52,7 +52,7 @@ Used for Posting a Ingredients
 ```
 ---
 
-### Recip
+### Recipe
 
 | Method | URL                | Description                                                                                                                                                                      |
 | ------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -68,7 +68,28 @@ Used for Posting a Ingredients
 
 | Method | URL                | Description                                                                                                                                                                      |
 | ------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| POST   | /category             | Checks whether the payload from the body matches with the user from the database. Returns a message and JWT token on successful login.                                           |
+| POST   | /category             | Checks whether the payload from the body matches with the category  from the database.
 | GET    | /category             | Protected Route. Returns an array of categories                                                                                                                  
 | GET    | /category/:id         | Protected Route. Returns an array of objects for categories                                                                                                                 
 | DELETE | /category/:id         | Protected Route. Deletes a category by specific ID.                                                                                                                                  |
+
+
+---
+
+### Source
+
+| Method | URL                | Description                                                                                                                                                                      |
+| ------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| POST   | /Source             | Checks whether the payload from the body matches with the Source from the database
+| GET    | /Source             | Protected Route. Returns an array of categories                                                                                                                  
+| GET    | /Source/:id         | Protected Route. Returns an array of objects for Sources                                                                                                                 
+| DELETE | /Source/:id         | Protected Route. Deletes a Source by specific ID.                                                                                                                                  |
+
+### Ingredient
+
+| Method | URL                | Description                                                                                                                                                                      |
+| ------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| POST   | /Ingredient             | Checks whether the payload from the body matches with the Ingredients from the database
+| GET    | /Ingredient             | Protected Route. Returns an array of Ingredients                                                                                                                  
+| GET    | /Ingredient/:id         | Protected Route. Returns an array of objects for Ingredient                                                                                                                 
+| DELETE | /Ingredient/:id         | Protected Route. Deletes an Ingredient by specific ID.                                                                                                                                  |
