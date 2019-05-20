@@ -20,10 +20,9 @@ Used for register and login
 
 Used for Posting a recipe
 ```js
-{
-  "instructions": "instruction",
+{ 
   "Title": "title",
-  "expirationDate": "2019-04-17 12:00:00"
+  "instructions": "instruction"
 }
 ```
 ---
