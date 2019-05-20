@@ -31,7 +31,6 @@ Used for Posting a Source
 ```js
 {
   "nameOfSource": "nameOfSource",
-  "recipe_ID": (points to recipe ID)
 }
 ```
 ---
