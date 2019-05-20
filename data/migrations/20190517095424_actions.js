@@ -31,15 +31,6 @@ exports.up = function(knex) {
 
     tbl.string("name",50) //description column
         .notNullable()
-
-    tbl
-      .integer("recipe_id")//FK pointing to recipe ID
-      .unsigned()
-      .notNullable()
-      .references('id')
-      .inTable('recipes')
-      .onDelete('RESTRICT')
-      .onUpdate('RESTRICT')
 })
 .createTable("recipe",tbl=>{
   tbl
@@ -49,6 +40,14 @@ exports.up = function(knex) {
     .notNullable()
   tbl
     .string("instructions")
+  tbl
+    .integer("source_id")//FK pointing to recipe ID
+    .unsigned()
+    .notNullable()
+    .references('id')
+    .inTable('source')
+    .onDelete('RESTRICT')
+    .onUpdate('RESTRICT')
 })
 .createTable("recipe_ingredients",tbl=>{
   tbl
