@@ -52,15 +52,23 @@ Used for Posting a Ingredients
 ```
 ---
 
-### Users
+### Recip
 
 | Method | URL                | Description                                                                                                                                                                      |
 | ------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | POST   | /register          | Creates a new User to the users table in the database.                                                                                                                           |
 | POST   | /login             | Checks whether the payload from the body matches with the user from the database. Returns a message and JWT token on successful login.                                           |
-| GET    | /recipe             | Protected Route. Returns an array of User objects of all users.                                                                                                                  |
-| GET    | /recipe/:id         | Protected Route. Returns an array of objects for the user by ID                                                                                                                  |
-| DELETE | /recipe/:id         | Protected Route. Deletes a User by specific ID.                                                                                                                                  |
+| GET    | /recipe             | Protected Route. Returns an array of recipes                                                                                                                   |
+| GET    | /recipe/:id         | Protected Route. Returns an array of objects for the recipes by ID                                                                                                                  |
+| DELETE | /recipe/:id         | Protected Route. Deletes a recipe by specific ID.                                                                                                                                  |
 
 ---
 
+### category
+
+| Method | URL                | Description                                                                                                                                                                      |
+| ------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| POST   | /category             | Checks whether the payload from the body matches with the user from the database. Returns a message and JWT token on successful login.                                           |
+| GET    | /category             | Protected Route. Returns an array of categories                                                                                                                  
+| GET    | /category/:id         | Protected Route. Returns an array of objects for categories                                                                                                                 
+| DELETE | /category/:id         | Protected Route. Deletes a category by specific ID.                                                                                                                                  |
